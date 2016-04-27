@@ -166,7 +166,7 @@ social:
 # Sections shown in the index page
 
 pages_list:
-  About: 'about'
+  关于: 'about'
   Blog: 'latest-post'
   Timeline: 'timeline'
   Contact: 'contact'
