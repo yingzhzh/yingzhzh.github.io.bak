@@ -187,3 +187,5 @@ sass:
 gems:
   - jekyll-paginate
   - jemoji
+  
+paginate: 5
