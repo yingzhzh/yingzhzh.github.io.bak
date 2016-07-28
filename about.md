@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: ¹ØÓÚ
 permalink: /about/
 ---
 
