@@ -10,8 +10,8 @@ author: yingzhzh
 ## Pokemon Go怎么抓皮卡丘
 -----
 
-
 ![enter image description here](http://ww1.sinaimg.cn/large/76aacbf5gw1f6amn2qwmlj20cs077my9.jpg)
+
 满满的回忆——皮卡丘
 
 玩家们在首次进入口袋妖怪GO游戏时，有三只初始精灵可以选择，分别为小火龙、杰尼龟以及妙蛙种子，其实还有第四只隐藏精灵——皮卡丘!小伙伴们需要注意的是，一但选择了皮卡丘就不能再选其他精灵了，也就是说玩家只能在这四只中选择一只成为自己的精灵伙伴。
