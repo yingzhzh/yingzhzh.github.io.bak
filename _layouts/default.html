@@ -11,13 +11,83 @@
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css"/>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap-notify/0.2.0/css/bootstrap-notify.css" rel="stylesheet">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
           href="{{ site.baseurl }}/feed.xml"/>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
           rel='stylesheet' type='text/css'>
-    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+            integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <script src="/js/bootstrap-notify.min.js"></script>
-    <script>$.notify("Hello World");</script>
+    <style>
+        .alert-minimalist {
+            background-color: rgb(241, 242, 240);
+            border-color: rgba(149, 149, 149, 0.3);
+            border-radius: 3px;
+            color: rgb(149, 149, 149);
+            padding: 10px;
+        }
+
+        .alert-minimalist > [data-notify="icon"] {
+            height: 50px;
+            margin-right: 12px;
+        }
+
+        .alert-minimalist > [data-notify="title"] {
+            color: rgb(51, 51, 51);
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .alert-minimalist > [data-notify="message"] {
+            font-size: 80%;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $.getJSON({
+//                type: "GET",
+                url: "http://pokesnipers.com/api/v1/pokemon.json",
+//                dataType: "json",
+                success: function (data) {
+//                    var result = JSON.parse(data);
+                    console.log(1);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                }
+            })
+//            $.getJSON( "http://pokesnipers.com/api/v1/pokemon.json", function( data ) {
+//                console.log(data);
+////                var items = [];
+////                $.each( data, function( key, val ) {
+////                    items.push( "<li id='" + key + "'>" + val + "</li>" );
+////                });
+////
+////                $( "<ul/>", {
+////                    "class": "my-new-list",
+////                    html: items.join( "" )
+////                }).appendTo( "body" );
+//            });
+
+//            $.notify({
+//                icon: 'https://randomuser.me/api/portraits/med/men/77.jpg',
+//                title: 'Byron Morgan',
+//                message: 'Momentum reduce child mortality effectiveness incubation empowerment connect.'
+//            },{
+//                type: 'minimalist',
+//                delay: 5000,
+//                icon_type: 'image',
+//                template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+//                '<img data-notify="icon" class="img-circle pull-left">' +
+//                '<span data-notify="title">{1}</span>' +
+//                '<span data-notify="message">{2}</span>' +
+//                '</div>'
+//            });
+        });
+    </script>
 </head>
 
 <body>
