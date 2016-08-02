@@ -20,6 +20,36 @@
             integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <script src="/js/bootstrap-notify.min.js"></script>
     <style>
+        .fs-vid-background {
+            position: absolute;
+            width: 100%;
+            height: 642px;
+            top: 0;
+            left: 0;
+            z-index: -2;
+        }
+
+        .fs-vid-background video {
+            /*object-fit: cover;*/
+            /*width: 100%;*/
+            /*height: 100%;*/
+            object-fit: initial;
+            width: 100%;
+            height: inherit;
+        }
+
+        .overlay .fs-vid-background:before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #222222;
+            opacity: 0.5;
+            z-index: 2;
+        }
+
         .alert-minimalist {
             background-color: rgb(241, 242, 240);
             border-color: rgba(149, 149, 149, 0.3);
@@ -44,55 +74,18 @@
             font-size: 80%;
         }
     </style>
-    <script>
-//        $(document).ready(function () {
-//            $.getJSON({
-////                type: "GET",
-//                url: "http://pokesnipers.com/api/v1/pokemon.json",
-////                dataType: "json",
-//                success: function (data) {
-////                    var result = JSON.parse(data);
-//                    console.log(1);
-//                },
-//                error: function (xhr, ajaxOptions, thrownError) {
-//                    alert(xhr.status);
-//                    alert(thrownError);
-//                }
-//            })
-//            $.getJSON( "http://pokesnipers.com/api/v1/pokemon.json", function( data ) {
-//                console.log(data);
-////                var items = [];
-////                $.each( data, function( key, val ) {
-////                    items.push( "<li id='" + key + "'>" + val + "</li>" );
-////                });
-////
-////                $( "<ul/>", {
-////                    "class": "my-new-list",
-////                    html: items.join( "" )
-////                }).appendTo( "body" );
-//            });
-
-//            $.notify({
-//                icon: 'https://randomuser.me/api/portraits/med/men/77.jpg',
-//                title: 'Byron Morgan',
-//                message: 'Momentum reduce child mortality effectiveness incubation empowerment connect.'
-//            },{
-//                type: 'minimalist',
-//                delay: 5000,
-//                icon_type: 'image',
-//                template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
-//                '<img data-notify="icon" class="img-circle pull-left">' +
-//                '<span data-notify="title">{1}</span>' +
-//                '<span data-notify="message">{2}</span>' +
-//                '</div>'
-//            });
-//        });
-    </script>
 </head>
 
 <body>
 <!--style="background: url(/images/bg1.jpg);"-->
 <div class="intro-header">
+    <div class="fs-vid-background">
+        <video muted="" loop="" autoplay="autoplay">
+            <source src="video/video.webm" type="video/webm">
+            <source src="video/video.mp4" type="video/mp4">
+            <source src="video/video.ogv" type="video/ogg">
+        </video>
+    </div>
     <div class="wrapper-masthead">
         <div class="container">
             <header class="masthead clearfix">
@@ -112,7 +105,6 @@
 
     <div class="container">
         <div class="space-small"></div>
-
         <div class="centered">
             <ul class="ch-grid">
                 <li>
