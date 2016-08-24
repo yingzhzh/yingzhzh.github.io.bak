@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    {% include meta.html %}
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css"/>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap-notify/0.2.0/css/bootstrap-notify.css" rel="stylesheet">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+          href="{{ site.baseurl }}/feed.xml"/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+            integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap-notify.min.js"></script>
+    <style>
+        .fs-vid-background {
+            position: absolute;
+            width: 100%;
+            height: 642px;
+            top: 0;
+            left: 0;
+            z-index: -2;
+        }
+        .fs-vid-background video {
+            /*object-fit: cover;*/
+            /*width: 100%;*/
+            /*height: 100%;*/
+            object-fit: initial;
+            width: 100%;
+            height: inherit;
+        }
+
+        .overlay .fs-vid-background:before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #222222;
+            opacity: 0.5;
+            z-index: 2;
+        }
+
+        .alert-minimalist {
+            background-color: rgb(241, 242, 240);
+            border-color: rgba(149, 149, 149, 0.3);
+            border-radius: 3px;
+            color: rgb(149, 149, 149);
+            padding: 10px;
+        }
+
+        .alert-minimalist > [data-notify="icon"] {
+            height: 50px;
+            margin-right: 12px;
+        }
+
+        .alert-minimalist > [data-notify="title"] {
+            color: rgb(51, 51, 51);
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .alert-minimalist > [data-notify="message"] {
+            font-size: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<!--style="background: url(/images/bg1.jpg);"-->
+<div class="intro-header">
+    <div class="fs-vid-background">
+        <video muted="" loop="" autoplay="autoplay">
+            <source src="http://obb6sp0vq.bkt.clouddn.com/video.webm" type="video/webm">
+            <source src="http://obb6sp0vq.bkt.clouddn.com/video.mp4" type="video/mp4">
+            <source src="http://obb6sp0vq.bkt.clouddn.com/video.ogv" type="video/ogg">
+        </video>
+    </div>
+    <div class="wrapper-masthead">
+        <div class="container">
+            <header class="masthead clearfix">
+                <div class="site-info">
+                    <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+                    <p class="site-description">{{ site.description }}</p>
+                </div>
+                <nav>
+                    <a href="{{ site.baseurl }}/">分享</a>
+                    <a href="http://rare.pokedex.cn">稀有</a>
+                    <a href="http://map.pokedex.cn">雷达</a>
+                    <a href="{{ site.baseurl }}/about">关于</a>
+                    <a href="{{ site.baseurl }}/support">打赏</a>
+                </nav>
+            </header>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="space-small"></div>
+        <div class="centered">
+            <ul class="ch-grid">
+                <li>
+                    <div class="ch-item ch-img-1">
+                        <div class="ch-info-wrap">
+                            <div class="ch-info">
+                                <div class="ch-info-front ch-img-1"></div>
+                                <div class="ch-info-back">
+                                    <h3>{{ site.name }}</h3>
+                                    <p></br><a href="http://www.pokedex.cn">View on HomePage</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="space-medium"></div>
+
+    </div>
+</div>
+
+<div id="main" role="main" class="container">
+    {{ content }}
+</div>
+
+<div class="wrapper-footer">
+    <div class="container">
+        <footer class="footer">
+            <div class="svg-icon">
+                {% include svg-icons.html %}
+            </div>
+        </footer>
+    </div>
+</div>
+
+{% include analytics.html %}
+</body>
+</html>
